@@ -1,28 +1,27 @@
-@startuml
-header Topologi Jaringan Komputer Alternatif
-footer Copyright@2024
-title TOPOLOGI ALTER PLAN
-nwdiag {
-    inet -- router
+# Penjelasan Topologi Jaringan
 
-    network net1 {
-        color = "lightgreen"
-        router [address = "192.168.10.0/24"]
-    }
+## Komponen
+- **PCs**: Terdapat dua PC yang terhubung di subnet yang berbeda dengan alamat IP 192.168.10.1/24 dan 192.168.20.1/24.
+- **Router**:
+  - **R1 KHI**: Terhubung ke jaringan 192.168.10.0/24 dan memiliki IP 25.25.25.1 pada Eth3. R1 KHI juga terhubung ke jaringan 30.30.30.0/24 melalui Eth4 dengan IP 30.30.30.1.
+  - **R2 KJ**: Terhubung ke jaringan 192.168.10.0/24 pada Eth2 dengan IP 192.168.10.2. R2 KJ juga memiliki IP 18.18.18.1 pada Eth3 dan terhubung ke jaringan 30.30.30.0/24 melalui Eth4 dengan IP 30.30.30.2.
+  - **R3 CR**: Berfungsi sebagai router utama, terhubung ke PC dan router lain dengan IP sebagai berikut:
+    - Eth2: 192.168.20.1 (jaringan PC)
+    - Eth3: 18.18.18.2 (ke R2 KJ)
+    - Eth4: 25.25.25.2 (ke R1 KHI)
 
-    network net2 {
-        color = "lightyellow"
-        router [address = "192.168.20.0/26"]
-    }
+## Pengalamatan IP
+- **192.168.10.0/24**: Subnet yang digunakan oleh R1 KHI dan salah satu PC.
+- **192.168.20.0/24**: Subnet yang digunakan oleh R3 CR dan PC lainnya.
+- **25.25.25.0/24**: Jaringan antar koneksi R1 KHI dan R3 CR.
+- **18.18.18.0/24**: Jaringan antar koneksi R2 KJ dan R3 CR.
+- **30.30.30.0/24**: Jaringan antar koneksi R1 KHI dan R2 KJ.
 
-    network net3 {
-        color = "lightcoral"
-        router [address = "192.168.30.0/28"]
-    }
+## Konfigurasi RIP
+RIP digunakan pada semua router untuk memungkinkan routing dinamis. Konfigurasi ini memungkinkan setiap router secara otomatis belajar dan membagikan rute, memudahkan komunikasi di seluruh jaringan.
 
-    network net4 {
-        color = "lightgrey"
-        router [address = "192.168.40.0/25"]
-    }
-}
-@enduml
+## Informasi Proyek
+- **Universitas**: Universitas Esa Unggul
+- **Penulis**: Hemilitin Adilah
+- **NIM**: 20210801147
+- **Mata Kuliah**: Jaringan Komputer Lanjut
