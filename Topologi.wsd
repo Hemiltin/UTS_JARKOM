@@ -20,7 +20,6 @@
 ## Konfigurasi RIP
 RIP digunakan pada semua router untuk memungkinkan routing dinamis. Konfigurasi ini memungkinkan setiap router secara otomatis belajar dan membagikan rute, memudahkan komunikasi di seluruh jaringan.
 
-## Informasi Proyek
 - **Universitas**: Universitas Esa Unggul
 - **Penulis**: Hemilitin Adilah
 - **NIM**: 20210801147
