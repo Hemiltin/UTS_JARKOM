@@ -1,0 +1,28 @@
+@startuml
+header Topologi Jaringan Komputer Alternatif
+footer Copyright@2024
+title TOPOLOGI ALTER PLAN
+nwdiag {
+    inet -- router
+
+    network net1 {
+        color = "lightgreen"
+        router [address = "192.168.10.0/24"]
+    }
+
+    network net2 {
+        color = "lightyellow"
+        router [address = "192.168.20.0/26"]
+    }
+
+    network net3 {
+        color = "lightcoral"
+        router [address = "192.168.30.0/28"]
+    }
+
+    network net4 {
+        color = "lightgrey"
+        router [address = "192.168.40.0/25"]
+    }
+}
+@enduml
